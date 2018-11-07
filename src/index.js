@@ -1,15 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-import "./styles.css"
+import "./styles.scss"
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello React Router</h1>
-    </div>
-  )
-}
+import App from "./App.js"
 
 const rootElement = document.getElementById("root")
 ReactDOM.render(<App />, rootElement)
