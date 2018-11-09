@@ -66,7 +66,10 @@ class Card extends React.Component {
   render() {
     return (
       <CardContainer>
-        <img src="https://uploads.codesandbox.io/uploads/user/f752eb5a-ad47-4d7b-92c4-9aaf1424ed51/3jM4-donut.png" alt="" />
+        <img
+          src="https://uploads.codesandbox.io/uploads/user/f752eb5a-ad47-4d7b-92c4-9aaf1424ed51/WHWZ-donut-bar-homers.png"
+          alt="doughnut"
+        />
         <Title>Donut Name</Title>
         <Description>
           Cotton candy I love I love chupa chups candy. Sugar plum I love cake liquorice I love sesame snaps lollipop.

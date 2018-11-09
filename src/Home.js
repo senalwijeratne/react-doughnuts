@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import Card from "./components/Card"
 
-const DonutCards = styled.div`
+const DoughnutSection = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,11 +22,11 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <DonutCards>
+        <DoughnutSection>
           {arr.map(donut => {
             return <Card key={donut} />
           })}
-        </DonutCards>
+        </DoughnutSection>
       </React.Fragment>
     )
   }
