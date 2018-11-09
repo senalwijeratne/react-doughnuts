@@ -1,0 +1,9 @@
+{
+  "doughnuts": [
+    {
+      "name": "Pink Unicorn",
+      "price": 400,
+      "stock": 60
+    }
+  ]
+}

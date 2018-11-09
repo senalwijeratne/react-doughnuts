@@ -1,11 +1,5 @@
-/* * {border: 1px solid red} */
-
 body {
   font-family: "Patrick Hand", cursive;
   min-height: 100vh;
   margin: 0px 0px;
-}
-
-.temp {
-  flex-direction: column;
 }
