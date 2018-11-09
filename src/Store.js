@@ -1,11 +1,4 @@
 import React from "react"
-import styled from "styled-components"
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`
 
 class Store extends React.Component {
   constructor(props) {
@@ -15,7 +8,7 @@ class Store extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Title>STORE PAGE!</Title>
+        <h2>STORE PAGE!</h2>
       </React.Fragment>
     )
   }

@@ -1,11 +1,5 @@
 import React from "react"
-import styled from "styled-components"
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`
+import Card from "./components/Card"
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,7 +9,8 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Title>HOME PAGE!</Title>
+        <h2>HOME PAGE</h2>
+        <Card />
       </React.Fragment>
     )
   }

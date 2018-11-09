@@ -6,7 +6,6 @@ function App() {
   return (
     <React.Fragment>
       <Navbar />
-      <p>Some other stuff...</p>
     </React.Fragment>
   )
 }
