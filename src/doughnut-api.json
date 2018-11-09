@@ -2,6 +2,13 @@
   "doughnuts": [
     {
       "name": "Pink Unicorn",
+      "value": "pink-unicorn",
+      "price": 400,
+      "stock": 60
+    },
+    {
+      "name": "Chocolate Swirl",
+      "value": "chocolate-swirl",
       "price": 400,
       "stock": 60
     }
