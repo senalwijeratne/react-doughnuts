@@ -12,8 +12,7 @@ const BillingSection = styled.div`
   border-radius: 0px 15px 15px 0px;
 
   form {
-    // border: 1px solid red;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     width: 60%;
     height: 60%;
     display: flex;
@@ -24,7 +23,6 @@ const BillingSection = styled.div`
 `
 
 const OneLine = styled.div`
-  // border: 1px solid red;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -32,12 +30,17 @@ const OneLine = styled.div`
   align-items: center;
   margin-bottom: 15px;
 
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   input,
   select {
     font-size: 1.2rem;
     text-align: center;
     width: 70%;
-    // margin: 0px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -63,7 +66,7 @@ class Billing extends React.Component {
 
     this.state = {
       type: "pink-unicorn",
-      qty: 0,
+      qty: null,
       price: 400,
       total: 0
     }
@@ -80,7 +83,9 @@ class Billing extends React.Component {
   }
 
   handleSubmit = evt => {
-    evt.preventdefault()
+    evt.preventDefault()
+    alert(`You have selected ${this.state.qty} of ${this.state.type} doughnuts.
+    \nYour total is: Rs. ${this.state.total}`)
   }
 
   handleChange = evt => {
@@ -92,10 +97,10 @@ class Billing extends React.Component {
   render() {
     return (
       <BillingSection>
-        <form action={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <OneLine>
-            <label for="type">Type :</label>
-            <select id="type" name="type" value={this.state.type} onChange={this.handleChange}>
+            <label htmlFor="type">Type :</label>
+            <select id="type" name="type" defaultValue={this.state.type} onChange={this.handleChange}>
               <option value="pink-unicorn">Pink Unicorn</option>
               <option value="chocolate-swirl">Chocolate Swirl</option>
               <option value="coco-nuts">Coco-nuts</option>
@@ -103,14 +108,13 @@ class Billing extends React.Component {
             </select>
           </OneLine>
           <OneLine>
-            <label for="qty">Qty :</label>
-            <input id="qty" name="qty" type="number" min="0" max="20" value={this.state.qty} onChange={this.handleChange} />
+            <label htmlFor="qty">Qty :</label>
+            <input id="qty" name="qty" type="number" placeholder="0" value={this.state.qty} onChange={this.handleChange} />
           </OneLine>
           <OneLine>
-            <label for="total">Total :</label>
-            <input id="total" type="text" value={`Rs. ${this.state.total}`} />
+            <label htmlFor="total">Total :</label>
+            <input id="total" type="text" value={`Rs. ${this.state.total}`} readOnly />
           </OneLine>
-
           <SubmitButton type="submit" value="Place Order" />
         </form>
       </BillingSection>
