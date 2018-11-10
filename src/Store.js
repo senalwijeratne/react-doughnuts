@@ -4,6 +4,8 @@ import styled from "styled-components"
 import SelectedDoughnut from "./components/SelectedDoughnut"
 import Billing from "./components/Billing"
 
+import json from "./doughnut-api"
+
 const BillingSection = styled.div`
   display: flex;
   flex-direction: row-reverse;

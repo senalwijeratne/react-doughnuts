@@ -26,7 +26,7 @@ class SelectedDoughnut extends React.Component {
     return (
       <DoughnutContainer>
         <img
-          src="https://uploads.codesandbox.io/uploads/user/f752eb5a-ad47-4d7b-92c4-9aaf1424ed51/WHWZ-donut-bar-homers.png"
+          src="https://uploads.codesandbox.io/uploads/user/f752eb5a-ad47-4d7b-92c4-9aaf1424ed51/UdyU-pink-unicorn.png"
           alt="selected doughnut"
         />
       </DoughnutContainer>

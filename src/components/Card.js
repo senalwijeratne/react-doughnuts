@@ -40,8 +40,9 @@ const Description = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  width: 95%;
-  height: 35%;
+  width: 90%;
+  height: 30%;
+  padding: 2.5% 2.5%;
   background: #fff;
   margin-bottom: 10px;
   margin-top: auto;
@@ -66,15 +67,12 @@ class Card extends React.Component {
   render() {
     return (
       <CardContainer>
-        <img
-          src="https://uploads.codesandbox.io/uploads/user/f752eb5a-ad47-4d7b-92c4-9aaf1424ed51/WHWZ-donut-bar-homers.png"
-          alt="doughnut"
-        />
-        <Title>Donut Name</Title>
+        <img src={this.props.doughnut.url} alt={`${this.props.doughnut.name} doughnut`} />
+        <Title>{this.props.doughnut.name}</Title>
         <Description>
-          Cotton candy I love I love chupa chups candy. Sugar plum I love cake liquorice I love sesame snaps lollipop.
+          {this.props.doughnut.description}
           <Availability>
-            Only <span>10</span> available
+            Only <span>{this.props.doughnut.stock}</span> available
           </Availability>
         </Description>
       </CardContainer>

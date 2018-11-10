@@ -3,6 +3,8 @@ import styled from "styled-components"
 
 import Card from "./components/Card"
 
+import json from "./doughnut-api"
+
 const DoughnutSection = styled.div`
   display: flex;
   flex-direction: row;
@@ -11,8 +13,6 @@ const DoughnutSection = styled.div`
   align-items: space-between;
   margin: 50px;
 `
-
-const arr = [1, 2, 3, 4, 5, 6, 7, 8]
 
 class Home extends React.Component {
   constructor(props) {
@@ -23,8 +23,8 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <DoughnutSection>
-          {arr.map(donut => {
-            return <Card key={donut} />
+          {json.doughnuts.map(doughnut => {
+            return <Card doughnut={doughnut} key={doughnut.id} />
           })}
         </DoughnutSection>
       </React.Fragment>
