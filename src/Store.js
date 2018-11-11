@@ -19,27 +19,39 @@ class Store extends React.Component {
     super(props)
 
     this.state = {
-      selected: "classic",
-      selectedObject: {}
+      qty: 1,
+      total: 0,
+      selectedValue: json.doughnuts[0].value,
+      selectedObject: json.doughnuts[0]
     }
   }
 
   hanldeSelect = evt => {
-    console.log("---handiling select")
     this.setState(
       {
-        selected: evt.target.value
+        selectedValue: evt.target.value
       },
       () => {
-        this.setSelectedDoughnut()
+        let filteredJsonArr = json.doughnuts.filter(doughnut => doughnut.value === this.state.selectedValue)
+        this.setState(
+          {
+            selectedObject: filteredJsonArr[0]
+          },
+          () => {
+            this.updateTotal()
+          }
+        )
       }
     )
   }
 
-  setSelectedDoughnut = () => {
-    let filteredJsonArr = json.doughnuts.filter(doughnut => doughnut.value === this.state.selected)
+  handleQtyChange = evt => {
+    this.setState({ qty: evt.target.value }, () => this.updateTotal())
+  }
+
+  updateTotal = () => {
     this.setState({
-      selectedObject: filteredJsonArr[0]
+      total: this.state.qty * this.state.selectedObject.price
     })
   }
 
@@ -48,9 +60,10 @@ class Store extends React.Component {
       <BillingSection>
         <Billing
           json={json}
-          selectedObject={this.state.selectedObject}
-          selected={this.state.selected}
+          {...this.state}
           hanldeSelect={this.hanldeSelect}
+          handleQtyChange={this.handleQtyChange}
+          updateTotal={this.updateTotal}
         />
         <SelectedDoughnut selectedObject={this.state.selectedObject} />
       </BillingSection>

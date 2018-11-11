@@ -63,32 +63,16 @@ const SubmitButton = styled.input`
 class Billing extends React.Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      qty: "",
-      price: 400,
-      total: 0
-    }
   }
 
   componentDidMount() {
-    this.updateTotal()
-  }
-
-  updateTotal = () => {
-    this.setState({
-      total: this.state.qty * this.props.selectedObject.price
-    })
+    this.props.updateTotal()
   }
 
   handleSubmit = evt => {
     evt.preventDefault()
-    alert(`You have purchased ${this.state.qty} of ${this.props.selectedObject.name} doughnuts.
-    \nYour total is: Rs. ${this.state.total}`)
-  }
-
-  handleChange = evt => {
-    this.setState({ qty: evt.target.value }, () => this.updateTotal())
+    alert(`\nYou have purchased ${this.props.qty} of ${this.props.selectedObject.name} doughnuts.
+    \nYour total is: Rs. ${this.props.total}`)
   }
 
   render() {
@@ -97,7 +81,7 @@ class Billing extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <OneLine>
             <label htmlFor="type">Type :</label>
-            <select id="type" name="type" value={this.props.selected} onChange={this.props.hanldeSelect}>
+            <select id="type" name="type" value={this.props.selectedValue} onChange={this.props.hanldeSelect}>
               {this.props.json.doughnuts.map(doughnut => {
                 return (
                   <option key={doughnut.id} value={doughnut.value}>
@@ -109,11 +93,18 @@ class Billing extends React.Component {
           </OneLine>
           <OneLine>
             <label htmlFor="qty">Qty :</label>
-            <input id="qty" name="qty" type="number" placeholder="0" value={this.state.qty} onChange={this.handleChange} />
+            <input
+              id="qty"
+              name="qty"
+              type="number"
+              placeholder="0"
+              value={this.props.qty}
+              onChange={this.props.handleQtyChange}
+            />
           </OneLine>
           <OneLine>
             <label htmlFor="total">Total :</label>
-            <input id="total" type="text" value={`Rs. ${this.state.total}`} readOnly />
+            <input id="total" type="text" value={`Rs. ${this.props.total}`} readOnly />
           </OneLine>
           <SubmitButton type="submit" value="Place Order" />
         </form>
