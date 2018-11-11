@@ -8,7 +8,7 @@ const CardContainer = styled.div`
   align-items: center;
   width: 20vw;
   height: 50vh;
-  background: #ececec;
+  background: #e0eafc;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   margin: 15px 0px;
@@ -18,7 +18,7 @@ const CardContainer = styled.div`
     height: 50%;
     border-radius: 15px 15px 0px 0px;
     object-fit: cover;
-    background: #c4c4c4;
+    background: #d4e1f9;
   }
 `
 

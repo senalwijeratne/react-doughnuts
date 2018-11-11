@@ -17,13 +17,42 @@ const BillingSection = styled.div`
 class Store extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      selected: "classic",
+      selectedObject: {}
+    }
+  }
+
+  hanldeSelect = evt => {
+    console.log("---handiling select")
+    this.setState(
+      {
+        selected: evt.target.value
+      },
+      () => {
+        this.setSelectedDoughnut()
+      }
+    )
+  }
+
+  setSelectedDoughnut = () => {
+    let filteredJsonArr = json.doughnuts.filter(doughnut => doughnut.value === this.state.selected)
+    this.setState({
+      selectedObject: filteredJsonArr[0]
+    })
   }
 
   render() {
     return (
       <BillingSection>
-        <Billing />
-        <SelectedDoughnut />
+        <Billing
+          json={json}
+          selectedObject={this.state.selectedObject}
+          selected={this.state.selected}
+          hanldeSelect={this.hanldeSelect}
+        />
+        <SelectedDoughnut selectedObject={this.state.selectedObject} />
       </BillingSection>
     )
   }

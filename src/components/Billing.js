@@ -65,8 +65,7 @@ class Billing extends React.Component {
     super(props)
 
     this.state = {
-      type: "pink-unicorn",
-      qty: null,
+      qty: "",
       price: 400,
       total: 0
     }
@@ -78,20 +77,18 @@ class Billing extends React.Component {
 
   updateTotal = () => {
     this.setState({
-      total: this.state.qty * this.state.price
+      total: this.state.qty * this.props.selectedObject.price
     })
   }
 
   handleSubmit = evt => {
     evt.preventDefault()
-    alert(`You have selected ${this.state.qty} of ${this.state.type} doughnuts.
+    alert(`You have purchased ${this.state.qty} of ${this.props.selectedObject.name} doughnuts.
     \nYour total is: Rs. ${this.state.total}`)
   }
 
   handleChange = evt => {
-    const target = evt.target
-    const name = target.name
-    this.setState({ [name]: target.value }, () => this.updateTotal())
+    this.setState({ qty: evt.target.value }, () => this.updateTotal())
   }
 
   render() {
@@ -100,11 +97,14 @@ class Billing extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <OneLine>
             <label htmlFor="type">Type :</label>
-            <select id="type" name="type" defaultValue={this.state.type} onChange={this.handleChange}>
-              <option value="pink-unicorn">Pink Unicorn</option>
-              <option value="chocolate-swirl">Chocolate Swirl</option>
-              <option value="coco-nuts">Coco-nuts</option>
-              <option value="almond-os">Almond O's</option>
+            <select id="type" name="type" value={this.props.selected} onChange={this.props.hanldeSelect}>
+              {this.props.json.doughnuts.map(doughnut => {
+                return (
+                  <option key={doughnut.id} value={doughnut.value}>
+                    {doughnut.name}
+                  </option>
+                )
+              })}
             </select>
           </OneLine>
           <OneLine>

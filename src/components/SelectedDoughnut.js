@@ -25,10 +25,7 @@ class SelectedDoughnut extends React.Component {
   render() {
     return (
       <DoughnutContainer>
-        <img
-          src="https://uploads.codesandbox.io/uploads/user/f752eb5a-ad47-4d7b-92c4-9aaf1424ed51/UdyU-pink-unicorn.png"
-          alt="selected doughnut"
-        />
+        <img src={this.props.selectedObject.url} alt={`${this.props.selectedObject.name} doughnut`} />
       </DoughnutContainer>
     )
   }

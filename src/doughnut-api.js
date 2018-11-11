@@ -31,11 +31,11 @@ export default {
     },
     {
       id: 10004,
-      name: "Almond O's",
-      value: "almond-os",
+      name: "Classic",
+      value: "classic",
       description:
         "Cookie gummi bears jelly beans soufflé. Cupcake wafer pie jelly cotton candy sesame snaps tootsie roll fruitcake candy.",
-      price: 600,
+      price: 250,
       stock: 8,
       url: "https://uploads.codesandbox.io/uploads/user/f752eb5a-ad47-4d7b-92c4-9aaf1424ed51/QbWg-almond-os.png"
     },
