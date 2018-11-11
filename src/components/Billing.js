@@ -20,6 +20,18 @@ const BillingSection = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 70vw;
+    height: 70vw;
+    border-radius: 0px 0px 15px 15px;
+
+    form {
+      width: 70%;
+      height: 70%;
+      font-size: 1rem;
+    }
+  }
 `
 
 const OneLine = styled.div`
@@ -45,6 +57,14 @@ const OneLine = styled.div`
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+
+  @media only screen and (max-width: 600px) {
+    input,
+    select {
+      font-size: 0.8rem;
+      width: 60%;
+    }
+  }
 `
 
 const SubmitButton = styled.input`
@@ -58,6 +78,11 @@ const SubmitButton = styled.input`
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1rem;
+    height: 20%;
+  }
 `
 
 class Billing extends React.Component {

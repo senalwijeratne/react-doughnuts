@@ -15,6 +15,16 @@ const DoughnutContainer = styled.div`
     width: 30vw;
     height: auto;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 80vw;
+    height: 50vh;
+
+    img {
+      width: 50vw;
+      height: auto;
+    }
+  }
 `
 
 function SelectedDoughnut(props) {

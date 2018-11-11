@@ -13,6 +13,11 @@ const CardContainer = styled.div`
   border-radius: 15px;
   margin: 15px 0px;
 
+  @media only screen and (max-width: 600px) {
+    width: 70vw;
+    height: 60vh;
+  }
+
   img {
     width: 100%;
     height: 50%;

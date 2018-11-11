@@ -12,6 +12,10 @@ const BillingSection = styled.div`
   justify-content: center;
   align-items: center;
   margin: 50px;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column-reverse;
+  }
 `
 
 class Store extends React.Component {

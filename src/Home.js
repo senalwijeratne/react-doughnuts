@@ -12,6 +12,10 @@ const DoughnutSection = styled.div`
   justify-content: space-between;
   align-items: space-between;
   margin: 50px;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: space-around;
+  }
 `
 
 function Home() {
