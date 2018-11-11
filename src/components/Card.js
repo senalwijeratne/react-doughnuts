@@ -59,25 +59,19 @@ const Availability = styled.span`
   }
 `
 
-class Card extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <CardContainer>
-        <img src={this.props.doughnut.url} alt={`${this.props.doughnut.name} doughnut`} />
-        <Title>{this.props.doughnut.name}</Title>
-        <Description>
-          {this.props.doughnut.description}
-          <Availability>
-            Only <span>{this.props.doughnut.stock}</span> available
-          </Availability>
-        </Description>
-      </CardContainer>
-    )
-  }
+function Card(props) {
+  return (
+    <CardContainer>
+      <img src={props.doughnut.url} alt={`${props.doughnut.name} doughnut`} />
+      <Title>{props.doughnut.name}</Title>
+      <Description>
+        {props.doughnut.description}
+        <Availability>
+          Only <span>{props.doughnut.stock}</span> available
+        </Availability>
+      </Description>
+    </CardContainer>
+  )
 }
 
 export default Card

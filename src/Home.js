@@ -14,22 +14,16 @@ const DoughnutSection = styled.div`
   margin: 50px;
 `
 
-class Home extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <DoughnutSection>
-          {json.doughnuts.map(doughnut => {
-            return <Card doughnut={doughnut} key={doughnut.id} />
-          })}
-        </DoughnutSection>
-      </React.Fragment>
-    )
-  }
+function Home() {
+  return (
+    <React.Fragment>
+      <DoughnutSection>
+        {json.doughnuts.map(doughnut => {
+          return <Card doughnut={doughnut} key={doughnut.id} />
+        })}
+      </DoughnutSection>
+    </React.Fragment>
+  )
 }
 
 export default Home

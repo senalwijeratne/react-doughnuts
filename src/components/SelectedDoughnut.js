@@ -17,18 +17,12 @@ const DoughnutContainer = styled.div`
   }
 `
 
-class SelectedDoughnut extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <DoughnutContainer>
-        <img src={this.props.selectedObject.url} alt={`${this.props.selectedObject.name} doughnut`} />
-      </DoughnutContainer>
-    )
-  }
+function SelectedDoughnut(props) {
+  return (
+    <DoughnutContainer>
+      <img src={props.selectedObject.url} alt={`${props.selectedObject.name} doughnut`} />
+    </DoughnutContainer>
+  )
 }
 
 export default SelectedDoughnut
